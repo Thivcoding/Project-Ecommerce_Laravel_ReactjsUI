@@ -35,7 +35,7 @@ const handleSubmit = async (e) => {
       if(user.role  !== "admin"){
           navigate("/"); 
         }else{
-          navigate("/admin"); 
+          navigate("/dashboard"); 
       }
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong");

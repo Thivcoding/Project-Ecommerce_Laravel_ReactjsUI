@@ -12,6 +12,15 @@ import DetailProduct from "../pages/frontend/Product/DetailProduct"
 import Checkout from "../pages/frontend/Checkout"
 import Product from "../pages/frontend/Product/Product"
 import Profile from "../pages/frontend/Profile"
+import Products from "../pages/admin/Products/Products"
+import Users from "../pages/admin/Users"
+import DashboardLayout from "../layout/DashboardLayout"
+import CreateProduct from "../pages/admin/Products/CreateProduct"
+import EditProduct from "../pages/admin/Products/EditProduct"
+import Categories from "../pages/admin/Categorys/Category"
+import CreateCategory from "../pages/admin/Categorys/CreateCategory"
+import EditCategory from "../pages/admin/Categorys/EditCategory"
+import OrdersList from "../pages/admin/Orders"
 
 
 const AppRoutes = () => {
@@ -20,7 +29,7 @@ const AppRoutes = () => {
       
       {/* user */}
       <Route path="/" element={<MasterLayoutUser />}>
-          <Route index element={<Home />} /> {/* default child route */}
+          <Route index element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
@@ -43,12 +52,20 @@ const AppRoutes = () => {
       </Route>
 
       {/* admin */}
-      <Route
-        path="/admin"
-        element={
-          <Dashboard/>
-        }
-      />
+      <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<Dashboard />} />
+          {/*  */}
+          <Route path="products" element={<Products />} />
+          <Route path="products/create" element={<CreateProduct />} />
+          <Route path="products/edit/:id" element={<EditProduct />} />
+          {/*  */}
+          <Route path="categories" element={<Categories />} />
+          <Route path="categories/create" element={<CreateCategory />} />
+          <Route path="categories/edit/:id" element={<EditCategory />} />
+
+          <Route path="orders" element={<OrdersList/>} />
+          <Route path="users" element={<Users />} />
+      </Route>
     </Routes>
   )
 }

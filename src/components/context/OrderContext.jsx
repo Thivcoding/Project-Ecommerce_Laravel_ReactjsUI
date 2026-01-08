@@ -73,7 +73,6 @@ export const OrderProvider = ({ children }) => {
     }
   };
 
-
   // Count of active (non-cancelled) orders
   const activeOrdersCount = orders.filter(o => o.status !== "cancelled").length;
 

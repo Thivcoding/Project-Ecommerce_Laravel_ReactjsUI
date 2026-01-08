@@ -118,7 +118,7 @@ const DetailProduct = () => {
                 <img
                   src={product.image_url}
                   alt={product.name}
-                  className="w-full h-96 object-contain transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-110"
                   onError={(e) => e.target.src = "https://via.placeholder.com/400x300?text=No+Image"}
                 />
               </div>

@@ -63,8 +63,8 @@ const Register = () => {
         <div className="flex justify-center mb-6">
           <label className="relative cursor-pointer">
             <img
-              src={preview || "https://via.placeholder.com/120"}
-              alt="avatar"
+              src={preview || "https://www.pngall.com/wp-content/uploads/5/Profile-PNG-File.png"}
+              alt="Your avatar"
               className="w-28 h-28 rounded-full object-cover border-4 border-indigo-500 shadow"
             />
             <input

@@ -53,7 +53,7 @@ const MasterLayoutUser = () => {
 
             {/* MENU */}
             <ul className="hidden lg:flex items-center space-x-2">
-              {[{ name: "Home", path: "/" }, { name: "Products", path: "/product" }, { name: "About", path: "/about" }, { name: "Contact", path: "/contact" }].map((m) => (
+              {[{ name: "Home", path: "/" }, { name: "Products", path: "/product" }, { name: "About", path: "https://hokvanthivportfolio.vercel.app/" }, { name: "Contact", path: "https://hokvanthivportfolio.vercel.app/" }].map((m) => (
                 <li key={m.name}>
                   <Link
                     to={m.path}
@@ -130,45 +130,61 @@ const MasterLayoutUser = () => {
 
       {/* FOOTER */}
       <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-300 py-12 mt-12 border-t-4 border-indigo-600">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {/* Brand */}
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <FaBolt className="text-indigo-500 text-2xl" />
-                <h2 className="text-xl font-bold text-white">E-Shop</h2>
-              </div>
-              <p className="text-gray-400">Your one-stop shop for quality electronics and gadgets.</p>
-            </div>
+  <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
 
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-white font-bold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><Link to="/" className="hover:text-indigo-400 transition-colors">Home</Link></li>
-                <li><Link to="/product" className="hover:text-indigo-400 transition-colors">Shop</Link></li>
-                <li><Link to="/about" className="hover:text-indigo-400 transition-colors">About</Link></li>
-                <li><Link to="/contact" className="hover:text-indigo-400 transition-colors">Contact</Link></li>
-                {isLoggedIn && <li><Link to="/orders" className="hover:text-indigo-400 transition-colors">Orders</Link></li>}
-              </ul>
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h3 className="text-white font-bold mb-4">Contact Us</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>📧 support@eshop.com</li>
-                <li>📞 +1 234 567 890</li>
-                <li>📍 123 Shopping St, NY</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-700 pt-8 text-center">
-            <p className="text-gray-400">&copy; 2025 E-Shop Electronics. All rights reserved.</p>
-          </div>
+      {/* Brand / About Me */}
+      <div>
+        <div className="flex items-center space-x-2 mb-4">
+          <FaBolt className="text-indigo-500 text-2xl" />
+          <h2 className="text-xl font-bold text-white">Thivcoding Shop</h2>
         </div>
-      </footer>
+        <p className="text-gray-400 leading-relaxed">
+          Hi, I'm <span className="text-white font-semibold">Hok Vanthiv</span>,  
+          a Full-Stack Web Developer passionate about building modern web apps,  
+          e-commerce systems, and APIs using React, Laravel, and modern technologies.
+        </p>
+      </div>
+
+      {/* Quick Links */}
+      <div>
+        <h3 className="text-white font-bold mb-4">Quick Links</h3>
+        <ul className="space-y-2">
+          <li><Link to="/" className="hover:text-indigo-400 transition-colors">Home</Link></li>
+          <li><Link to="/product" className="hover:text-indigo-400 transition-colors">Shop</Link></li>
+          <li><Link to="/about" className="hover:text-indigo-400 transition-colors">About Me</Link></li>
+          <li><Link to="/contact" className="hover:text-indigo-400 transition-colors">Contact</Link></li>
+          {isLoggedIn && (
+            <li>
+              <Link to="/orders" className="hover:text-indigo-400 transition-colors">
+                My Orders
+              </Link>
+            </li>
+          )}
+        </ul>
+      </div>
+
+      {/* Contact Info */}
+      <div>
+        <h3 className="text-white font-bold mb-4">Contact</h3>
+        <ul className="space-y-2 text-gray-400">
+          <li>📧 vanthiv.dev@gmail.com</li>
+          <li>📞 +855 XX XXX XXX</li>
+          <li>📍 Phnom Penh, Cambodia</li>
+          <li>💻 github.com/vanthiv</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div className="border-t border-gray-700 pt-8 text-center">
+      <p className="text-gray-400">
+        &copy; {new Date().getFullYear()} Thivcoding. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
     </div>
   );
 };
