@@ -6,12 +6,17 @@ import Cart from "../pages/frontend/Cart"
 import Orders from "../pages/frontend/Orders"
 import Login from "../pages/auth/Login"
 import Register from "../pages/auth/Register"
-import Dashboard from "../pages/admin/Dashboard"
 import MasterLayoutUser from "../layout/MasterLayoutUser"
 import DetailProduct from "../pages/frontend/Product/DetailProduct"
 import Checkout from "../pages/frontend/Checkout"
 import Product from "../pages/frontend/Product/Product"
 import Profile from "../pages/frontend/Profile"
+
+// payment page
+
+
+// admin
+import Dashboard from "../pages/admin/Dashboard"
 import Products from "../pages/admin/Products/Products"
 import Users from "../pages/admin/Users"
 import DashboardLayout from "../layout/DashboardLayout"
@@ -21,7 +26,7 @@ import Categories from "../pages/admin/Categorys/Category"
 import CreateCategory from "../pages/admin/Categorys/CreateCategory"
 import EditCategory from "../pages/admin/Categorys/EditCategory"
 import OrdersList from "../pages/admin/Orders"
-
+import PaymentPage from "../pages/frontend/PaymentPage"
 
 const AppRoutes = () => {
   return (
@@ -35,15 +40,14 @@ const AppRoutes = () => {
 
           {/* product */}
           <Route path="/product" element={<Product/>}/>
-
-          {/* product Detail*/}
           <Route path="/product/:id" element={<DetailProduct/>}/>
 
-          {/* cart page */}
+          {/* cart & checkout */}
           <Route path="/cart" element={<Cart />}/>
-
-          {/* Check out page */}
           <Route path="/checkout" element={<Checkout/>}/>
+
+          {/* payment page */}
+          <Route path="/payment/:orderId" element={<PaymentPage />} />
 
           {/* History Order */}
           <Route path="/orders" element={<Orders />}/>
@@ -54,11 +58,10 @@ const AppRoutes = () => {
       {/* admin */}
       <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
-          {/*  */}
           <Route path="products" element={<Products />} />
           <Route path="products/create" element={<CreateProduct />} />
           <Route path="products/edit/:id" element={<EditProduct />} />
-          {/*  */}
+
           <Route path="categories" element={<Categories />} />
           <Route path="categories/create" element={<CreateCategory />} />
           <Route path="categories/edit/:id" element={<EditCategory />} />
