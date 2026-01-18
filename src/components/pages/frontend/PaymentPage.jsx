@@ -27,6 +27,8 @@ const PaymentPage = () => {
     setError(null);
     try {
       const res = await createPayment(orderId);
+      console.log(res.data);
+      
       if (res.data.success) {
         setPayment(res.data.payment);
         setPolling(true);
