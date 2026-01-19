@@ -33,7 +33,7 @@ const Profile = () => {
         password: '••••••••'
       });
       
-      if (user.image_url) setImagePreview(user.image_url);
+      if (user.image) setImagePreview(user.image);
     } catch (err) {
       setError('Failed to load profile.');
     } finally {
@@ -105,8 +105,8 @@ const handleSubmit = async () => {
     });
 
     // Update image preview
-    if (updatedUser.image_url) {
-      setImagePreview(updatedUser.image_url);
+    if (updatedUser.image) {
+      setImagePreview(updatedUser.image);
     }
 
     // Success message
